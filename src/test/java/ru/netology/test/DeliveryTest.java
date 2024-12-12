@@ -17,14 +17,10 @@ import static com.codeborne.selenide.Selenide.open;
 public class DeliveryTest {
 
     @BeforeAll
-    static void setUpAll() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
-    }
+    static void setUpAll() {SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));}
 
     @AfterAll
-    static void tearDownAll() {
-        SelenideLogger.removeListener("allure");
-    }
+    static void tearDownAll() {SelenideLogger.removeListener("AllureSelenide");}
 
     @BeforeEach
     void setup() {
